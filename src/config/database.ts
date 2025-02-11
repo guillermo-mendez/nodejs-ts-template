@@ -42,5 +42,5 @@ export default {
   pool,
   getConnection,
   getConnectionTest,
-  databaseName: process.env.DB_NAME
+  databaseName: process.env.DB_NAME || 'you_database',
 };
