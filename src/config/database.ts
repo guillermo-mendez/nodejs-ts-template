@@ -6,10 +6,10 @@ config();
 
 // Configuración de la conexión a la base de datos
 const pool: Pool = mariadb.createPool({
-  host: process.env.DB_HOST || 'localhost',  // Dirección del servidor
-  user: process.env.DB_USER || 'root',       // Usuario de la base de datos
-  password: process.env.DB_PASSWORD || 'test',   // Contraseña del usuario
-  database: process.env.DB_NAME || 'citruxtec_next_turn',   // Nombre de la base de datos
+  host: process.env.DB_HOST, // Dirección del servidor
+  user: process.env.DB_USER,       // Usuario de la base de datos
+  password: process.env.DB_PASSWORD,   // Contraseña del usuario
+  database: process.env.DB_NAME ,   // Nombre de la base de datos
   port: parseInt(process.env.DB_PORT || '3306'), // Puerto de conexión
   connectionLimit: 10,                       // Límite de conexiones simultáneas
   multipleStatements : true,                 // Permite múltiples consultas en una sola llamada
@@ -42,5 +42,5 @@ export default {
   pool,
   getConnection,
   getConnectionTest,
-  databaseName: process.env.DB_NAME || 'citruxtec_next_turn',
+  databaseName: process.env.DB_NAME
 };
